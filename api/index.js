@@ -1,12 +1,7 @@
 import express from 'express';
 import session from 'express-session';
-import { apolloServer } from 'apollo-server';
-import bodyParser from 'body-parser';
 
 const app = express();
-
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
 
 import config from '../config';
 app.start = () => {

@@ -42,6 +42,9 @@ export default ({
   app.use('/graphql', (req, res) => {
     proxy.web(req, res, {target: targetUrl + '/graphql'});
   });
+  app.use('/graphiql', (req, res) => {
+    proxy.web(req, res, {target: targetUrl + '/graphiql'});
+  });
   app.use('/login', (req, res) => {
     proxy.web(req, res, {target: targetUrl + '/login'});
   });
