@@ -20,8 +20,7 @@ export default class Html extends Component {
   };
 
   render() {
-    const {assets, component, store} = this.props;
-    const content = component ? ReactDOM.renderToString(component) : '';
+    const {assets, content, store} = this.props;
     const head = Helmet.rewind();
     const storeData = store && serialize(store.getState());
 

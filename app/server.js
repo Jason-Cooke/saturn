@@ -2,6 +2,7 @@ import Express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import { ApolloProvider } from 'react-apollo';
+import { renderToStringWithData } from 'react-apollo/server';
 import favicon from 'serve-favicon';
 import compression from 'compression';
 import httpProxy from 'http-proxy';
@@ -102,29 +103,17 @@ export default ({
           </ApolloProvider>
         );
 
-        const maybeRenderPage = () => {
-          if (!_.some(store.getState().apollo.queries, 'loading')) {
-            stopSubscription();
-            res.status(200);
+        renderToStringWithData(component).then(content => {
+          res.status(200);
 
-            global.navigator = {userAgent: req.headers['user-agent']};
+          global.navigator = {userAgent: req.headers['user-agent']};
 
-            const html = (
-              <Html assets={webpackIsomorphicTools.assets()}
-                component={component} store={store} />
-            );
-            res.send('<!doctype html>\n' + ReactDOM.renderToStaticMarkup(html));
-          }
-        }
-
-        // now wait for all queries in the store to go ready
-        const stopSubscription = store.subscribe(maybeRenderPage);
-
-        // render once, to initialize apollo queries
-        ReactDOM.renderToString(component);
-
-        // if the page has no queries, the store will never change
-        maybeRenderPage();
+          const html = (
+            <Html assets={webpackIsomorphicTools.assets()}
+              content={content} store={store} />
+          );
+          res.send('<!doctype html>\n' + ReactDOM.renderToStaticMarkup(html));
+        });
       } else {
         res.status(404).send('Not found');
       }
