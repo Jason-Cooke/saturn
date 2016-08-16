@@ -1,4 +1,6 @@
 ## vNEXT
+ - update dependency to apollo-server 0.2.1 and apollo-client 0.4.x
+ - update skel app according to (Migrating from v0.1)[http://docs.apollostack.com/apollo-server/migration.html] and other known issues
 
 ## 0.2.4
  - Fix to ensure request headers get sent to proxy server
