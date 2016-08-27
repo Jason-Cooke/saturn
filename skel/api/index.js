@@ -11,6 +11,11 @@ import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 const executableSchema = makeExecutableSchema({
   typeDefs:schema,
   resolvers:{},
+  // For mocks to work nicely, turn to true (default) for production use
+  resolverValidationOptions: {
+    requireResolversForNonScalar: false,
+    requireResolversForArgs: false,
+  },
 });
 
 addMockFunctionsToSchema({
