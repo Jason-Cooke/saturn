@@ -14,6 +14,7 @@
     "body-parser": "^1.15.2",
     "graphql": "^0.6.1",
     "graphql-tag": "^0.1.9",
+    "graphql-tools": "^0.6.5",
     "react": "^15.0.2",
     "react-apollo": "^0.3.4",
     "react-router": "^2.4.1",
