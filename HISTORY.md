@@ -1,4 +1,10 @@
 ## vNEXT
+
+## 0.2.6
+ - Fix issue with SSR + react warning [Issue #41](https://github.com/apollostack/saturn/issues/41)
+
+## 0.2.5
+ - update to react-apollo 0.4.x
  - update dependency to apollo-server 0.2.1 and apollo-client 0.4.x
  - update skel app according to (Migrating from v0.1)[http://docs.apollostack.com/apollo-server/migration.html] and other known issues
 
