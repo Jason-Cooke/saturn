@@ -103,14 +103,14 @@ export default ({
           </ApolloProvider>
         );
 
-        renderToStringWithData(component).then(content => {
+        renderToStringWithData(component).then((content, state) => {
           res.status(200);
 
           global.navigator = {userAgent: req.headers['user-agent']};
 
           const html = (
             <Html assets={webpackIsomorphicTools.assets()}
-              content={content} store={store} />
+              content={content} state={state} />
           );
           res.send('<!doctype html>\n' + ReactDOM.renderToStaticMarkup(html));
         });

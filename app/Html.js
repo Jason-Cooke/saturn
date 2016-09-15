@@ -16,14 +16,12 @@ export default class Html extends Component {
   static propTypes = {
     assets: PropTypes.object,
     component: PropTypes.node,
-    store: PropTypes.object
+    state: PropTypes.object
   };
 
   render() {
-    const {assets, content, store} = this.props;
+    const {assets, content, state} = this.props;
     const head = Helmet.rewind();
-    const storeData = store && serialize(store.getState());
-
     return (
       <html lang="en-us">
         <head>
@@ -44,7 +42,7 @@ export default class Html extends Component {
         </head>
         <body>
           <div id="content" dangerouslySetInnerHTML={{__html: content}}/>
-          {storeData && <script dangerouslySetInnerHTML={{__html: `window.__data=${storeData};`}} charSet="UTF-8"/>}
+          {state && <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(state)};`}} charSet="UTF-8"/>}
           <script src={assets.javascript.main} charSet="UTF-8"/>
         </body>
       </html>

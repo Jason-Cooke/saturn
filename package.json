@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/apollostack/saturn#readme",
   "dependencies": {
-    "apollo-client": "^0.4.11",
+    "apollo-client": "^0.4.15",
     "apollo-server": "^0.2.1",
     "autoprefixer-loader": "^3.1.0",
     "babel-core": "^6.5.2",
@@ -73,7 +73,7 @@
     "pretty-error": "^1.2.0",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
-    "react-apollo": "^0.4.5",
+    "react-apollo": "^0.4.7",
     "react-bootstrap": "^0.28.1",
     "react-dom": "^15.1.0",
     "react-helmet": "^2.2.0",
