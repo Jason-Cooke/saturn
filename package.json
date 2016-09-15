@@ -1,6 +1,6 @@
 {
   "name": "saturn-framework",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Microframework for Apollo app development",
   "main": "index.js",
   "bin": {
