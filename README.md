@@ -1,6 +1,6 @@
 # Saturn
 
-**NOTE: This project is mostly intended for internal use and as such should be approached with caution**
+**NOTE: This project is deprecated. Most of the design goals are achieved by the combination of Next.js and Apollo, See [this example](https://github.com/zeit/next.js/tree/master/examples/with-apollo). In this configuration, you'd treat the GraphQL server as a separate project.**
 
 Saturn is a microframework for building modern node/browser based JS apps, using [Apollo](http://apollostack.com). It is intended to provide the building blocks that the majority of such apps would need, such as:
 
