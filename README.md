@@ -83,7 +83,7 @@ apiServer.start();
 ```
 
 ### Client/server app entrypoint
-  - [`saturn-framework/app`](https://github.com/apollostack/saturn/blob/master/app/index.js) exports a `createApp` function which provides a universal API also avaliable at:
+  - [`saturn-framework/app`](https://github.com/apollostack/saturn/blob/master/app/index.js) exports a `createApp` function which provides a universal API also available at:
 
   - [`saturn-framework/app/client`](https://github.com/apollostack/saturn/blob/master/app/client.js) - takes a object of arguments:
 
